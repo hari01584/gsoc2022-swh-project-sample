@@ -1,0 +1,28 @@
+{
+    "name": "Software-Heritage Browser Extension",
+    "version": "1.0",
+    "description": "Sample project",
+    "permissions": ["activeTab"],
+    "icons": {
+        "16": "img/icon16.png",
+        "32": "img/icon32.png",
+        "48": "img/icon48.png"
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon128.png"
+    },
+    "content_scripts": [
+        {
+        "matches": [
+            "*://*.github.com/*/*"
+            ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+        }
+    ],
+    "host_permissions": [
+        "https://archive.softwareheritage.org/*"
+    ],
+    "manifest_version": 3
+  }
